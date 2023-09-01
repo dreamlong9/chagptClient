@@ -1,4 +1,4 @@
 一个可以对接chatgp api的。。。玩具
-<br/>
+  
 v0.001  纯前端实现了ui，从接口得到数据并展示。
-需要手动将api秘钥写入src/api.js的bearer后面
+需要手动将api秘钥写入src/api.js的Authorization: `Bearer 后面。

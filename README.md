@@ -1,44 +1,4 @@
-# default
-
-## Project setup
-
-```
-# yarn
-yarn
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+一个可以对接chatgp api的。。。玩具
+  
+v0.001  纯前端实现了ui，从接口得到数据并展示。
+需要手动将api秘钥写入src/api.js的Authorization: `Bearer 后面。

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const getChatResponses = async (messages_list) => {
+export const getChatResponses = async (messages_list, modelName) => {
   const response = await axios.post(
     "https://aigptx.top/v1/chat/completions",
     {
-      model: "gpt-3.5-turbo",
+      model: modelName,
       temperature: 0.5,
       messages: messages_list.value,
     },
@@ -15,6 +15,5 @@ export const getChatResponses = async (messages_list) => {
       },
     }
   );
-
   return response.data.choices[0].message.content;
 };

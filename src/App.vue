@@ -11,7 +11,7 @@
           gpt 3
         </v-tab>
 
-        <v-tab value="option-2">
+        <v-tab value="option-gpt4">
           <v-icon start> mdi-robot-happy </v-icon>
           gpt 4
         </v-tab>
@@ -24,42 +24,58 @@
 
       <!-- 侧边栏内容 -->
       <v-window v-model="tab">
-        <v-window-item class="overflow-auto" value="option-gpt3">
+        <v-window-item value="option-gpt3">
           <Content></Content>
         </v-window-item>
 
-        <v-window-item value="option-2">
-          <v-card elevation="2"><Content></Content></v-card>
+        <v-window-item value="option-gpt4">
+          <Content></Content>
         </v-window-item>
 
         <v-window-item value="option-3">
-          <v-card>
-            <v-card-text> <Content /> </v-card-text>
-          </v-card>
+          <Content></Content>
         </v-window-item>
       </v-window>
     </div>
 
-    <!-- 底下部分 -->
+    <!-- 底下输入框和发送按钮 -->
     <Footer></Footer>
   </v-card>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import Footer from "@/components/Footer.vue";
 import Content from "@/components/Content.vue";
-import { ref, provide } from "vue";
+import { ref, provide, computed } from "vue";
 
 const tab = ref("option-gpt3");
+const messageList_gpt3 = ref([]);
+const messageList_gpt4 = ref([]);
 
-const messageList = ref([]);
+//根据侧边栏的选中确定当前的messageList
+const messageList = computed(() => {
+  return tab.value === "option-gpt3" ? messageList_gpt3 : messageList_gpt4;
+});
+
+const pushMessage = (message) => {
+  if (tab.value === "option-gpt3") {
+    messageList_gpt3.value.push(message);
+    console.log(...messageList_gpt3.value);
+  } else {
+    messageList_gpt4.value.push(message);
+    console.log(...messageList_gpt4.value);
+  }
+};
+
+provide("tab", tab);
 provide("messageList", messageList);
+provide("pushMessage", pushMessage);
 </script>
 
 <style scoped>
 .item {
   margin: 5px;
-  height: 88vh;
+  height: 85vh;
   width: 98vw;
 }
 </style>

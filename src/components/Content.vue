@@ -1,5 +1,5 @@
 <template>
-  <v-virtual-scroll :items="messageList" height="80vh">
+  <v-virtual-scroll :items="messageList.value" height="75vh">
     <template v-slot:default="{ item }">
       <!-- 用户内容框 -->
       <v-card class="contentCard" elevation="3" v-if="isUserContent(item)">
@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-import { inject, ref } from "vue";
+import { inject } from "vue";
 
-const messageList = ref(inject("messageList"));
+const messageList = inject("messageList");
 
 const isUserContent = (item) => item.role == "user";
 </script>
@@ -35,7 +35,7 @@ const isUserContent = (item) => item.role == "user";
 <style scoped>
 .contentCard {
   margin: 5px;
-  width: 80vw;
+  width: 78vw;
 }
 .img {
   margin: 10px;

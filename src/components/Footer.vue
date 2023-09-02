@@ -17,15 +17,21 @@
 import { getChatResponses } from "@/api.js";
 import { inject, ref } from "vue";
 
+const tab = inject("tab");
 const messageList = inject("messageList");
+const pushMessage = inject("pushMessage");
 const userInput = ref();
 
 const click = async () => {
-  messageList.value.push({ role: "user", content: userInput.value });
+  pushMessage({ role: "user", content: userInput.value });
+  userInput.value = "";
 
-  const gptResponse = await getChatResponses(messageList);
-  messageList.value.push({ role: "assistant", content: gptResponse });
-  console.log(...messageList.value);
+  const gptResponse = await getChatResponses(
+    messageList.value,
+    tab.value === "option-gpt3" ? "gpt-3.5-turbo-0613" : "gpt-4-0314"
+  );
+
+  pushMessage({ role: "assistant", content: gptResponse });
 };
 </script>
 

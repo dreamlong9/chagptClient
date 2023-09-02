@@ -35,7 +35,7 @@ const isUserContent = (item) => item.role == "user";
 <style scoped>
 .contentCard {
   margin: 5px;
-  width: 85vw;
+  width: 80vw;
 }
 .img {
   margin: 10px;

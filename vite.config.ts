@@ -35,12 +35,8 @@ export default defineConfig({
     ],
   },
   server: {
-    proxy: {
-      "/api": {
-        target: "https://aigptx.top/v1/chat/completions",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
+    port: 8081,
+    strictPort: true,
+    
   },
 })

@@ -1,6 +1,5 @@
 <template>
   <div class="footer">
-    <v-divider style="margin: 10px"></v-divider>
     <v-row>
       <v-text-field
         class="textField"

@@ -58,7 +58,7 @@ provide("messageList", messageList);
 
 <style scoped>
 .item {
-  margin: 20px;
+  margin: 5px;
   height: 88vh;
   width: 98vw;
 }

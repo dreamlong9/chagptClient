@@ -17,7 +17,7 @@
 
 <script setup>
 import { inject, ref } from "vue";
-import { api } from "@/components/api.js";
+import { chat } from "@/components/api.js";
 
 const tab = inject("tab");
 const messageList = inject("messageList");
@@ -31,7 +31,7 @@ const click = async () => {
     const output = ref("");
     pushMessage({ role: "assistant", content: output });
 
-    api(
+    chat(
         messageList.value,
         tab.value === "option-gpt3" ? "gpt-3.5-turbo-0613" : "gpt-4-0314",
         output

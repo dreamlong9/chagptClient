@@ -1,6 +1,6 @@
 嗯，如题。这是一个可以对接chatgp api的。。。玩具
 
-使用说明：将您的apikey填入setting即可开始对话
+使用说明：将您的apikey填入setting即可开始对话  
 使用截图：
 ![image](https://github.com/dreamlong9/chagptClient/assets/77765472/af374fee-6617-4d54-865c-d3aa0fc948c5)  
 

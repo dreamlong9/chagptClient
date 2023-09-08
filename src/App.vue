@@ -14,9 +14,9 @@
                     gpt 4
                 </v-tab>
 
-                <v-tab value="option-3">
+                <v-tab value="setting">
                     <v-icon start> mdi-access-point </v-icon>
-                    Option 3
+                    setting
                 </v-tab>
             </v-tabs>
 
@@ -30,8 +30,8 @@
                     <Content></Content>
                 </v-window-item>
 
-                <v-window-item value="option-3">
-                    <Content></Content>
+                <v-window-item value="setting">
+                    <Setting></Setting>
                 </v-window-item>
             </v-window>
         </div>
@@ -44,11 +44,13 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Content from "@/components/Content.vue";
+import Setting from "@/components/Setting.vue";
 import { ref, provide, computed } from "vue";
 
 const tab = ref("option-gpt3");
 const messageList_gpt3 = ref([]);
 const messageList_gpt4 = ref([]);
+const apikey = "";
 
 //根据侧边栏的选中确定当前的messageList
 const messageList = computed(() => {

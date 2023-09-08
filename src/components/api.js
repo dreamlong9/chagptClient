@@ -1,4 +1,4 @@
-export const chat = async (messageList, modelName, output) => {
+export const chat = async (messageList, modelName, apikey, output) => {
     // 在处理过程中可能会出现错误，因此使用try-catch结构
     try {
         const openai_url = "https://aigptx.top/v1/chat/completions";
@@ -7,7 +7,7 @@ export const chat = async (messageList, modelName, output) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer `,
+                Authorization: `Bearer ${apikey}`,
             },
             body: JSON.stringify({
                 model: modelName,
@@ -43,7 +43,7 @@ export const chat = async (messageList, modelName, output) => {
 
                 // 内容存在时，不断修改响应式变量达到流式输出效果
                 const data = obj.choices[0].delta.content;
-                obj.choices[0].delta.content ? (output.value += data) : null;
+                data ? (output.value += data) : null;
             }
         }
     } catch (error) {

@@ -8,9 +8,9 @@
                 v-if="isUserContent(item)"
             >
                 <v-card style="height: 60px">
-                    <v-chip class="userNameCard" variant="elevated"
-                        >user</v-chip
-                    >
+                    <v-chip class="userNameCard" variant="elevated">
+                        user
+                    </v-chip>
                     <v-icon class="userImg" rouded-xl> mdi-account </v-icon>
                 </v-card>
 
@@ -22,11 +22,8 @@
             <!-- gpt内容框 -->
             <v-card class="contentCard" elevation="5" v-else>
                 <v-card style="height: 60px">
-                    <v-img
-                        class="img"
-                        src="@/assets/chatgpt.svg"
-                        height="35"
-                    ></v-img>
+                    <v-img class="img" src="@/assets/chatgpt.svg" height="35">
+                    </v-img>
                     <v-chip class="nameCard" variant="elevated">chatgpt</v-chip>
                 </v-card>
 

@@ -34,6 +34,7 @@ const click = async () => {
     chat(
         messageList.value,
         tab.value === "option-gpt3" ? "gpt-3.5-turbo-0613" : "gpt-4-0314",
+        localStorage.getItem("apikey"),
         output
     );
 };
@@ -41,7 +42,7 @@ const click = async () => {
 
 <style scoped>
 .footer {
-    position: fixed; /* 使用 fixed 定位 */
+    position: fixed;
     bottom: 0;
     width: 95vw;
 }

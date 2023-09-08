@@ -2,7 +2,8 @@
 
 使用说明：将您的apikey填入setting即可开始对话
 使用截图：
-![image](https://github.com/dreamlong9/chagptClient/assets/77765472/6ccbdfc3-2ca7-4efc-819e-9e9306e7d4a9)
+![image](https://github.com/dreamlong9/chagptClient/assets/77765472/af374fee-6617-4d54-865c-d3aa0fc948c5)  
+
 
   
 2023/09/08  v1.0    第一个正式版本发布了。累了，什么时候才能和dalao们一样长六个肝，一天卷20个小时。  
